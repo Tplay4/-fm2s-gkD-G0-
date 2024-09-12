@@ -60,7 +60,7 @@ print("You are died, stop the script")
 wait(0.75)
 print("Script has been stopped")
 wait(0.01)
-stop
+stop()
 else
 print("You are alive, script is working")
 end
