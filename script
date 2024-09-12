@@ -40,6 +40,7 @@ end
 noclip()
 
 workspace.Gravity = 0
+humanoid.WalkSpeed = 0
 root.Position = Vector3.new(107.00045, 71.8630066, -247.44809)
 
 local function toggleStairs()
