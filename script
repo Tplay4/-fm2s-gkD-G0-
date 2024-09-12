@@ -3,15 +3,16 @@
 local Noclip = nil
 local Clip = nil
 local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+local humanoid = root.Parent.Humanoid
 local gui = Instance.new("ScreenGui")
 local button = Instance.new("TextButton")
 
-gui.Parent = game.Players.LocalPlayer.PlayerGui
-button.Parent = gui
+gui.Parent      = game.Players.LocalPlayer.PlayerGui
+button.Parent   = gui
 button.Position = UDim2.new(0.03, 0, 0.9, 0)
-button.Size = UDim2.new(0, 150, 0, 50)
-button.ZIndex = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-button.Text = "Toggle Stairs"
+button.Size     = UDim2.new(0, 150, 0, 50)
+button.ZIndex   = 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+button.Text     = "Toggle Stairs"
 button.TextSize = 16
 
 root.Size = Vector3.new(45, 150, 45)
@@ -39,7 +40,7 @@ end
 noclip()
 
 workspace.Gravity = 0
-root.Position = Vector3.new(107.00045, 71.8630066, -247.44809)
+root.Position     = Vector3.new(107.00045, 71.8630066, -247.44809)
 
 local function toggleStairs()
 if root.CanTouch == true then
@@ -50,3 +51,17 @@ end
 end
 
 button.MouseButton1Click:Connect(toggleStairs)
+
+while true do
+wait(0.10)
+if humanoid.Health == 0 then
+workspace.Gravity = 196.2
+print(You are died, stop the script)
+wait(0.75)
+print(Script has been stopped)
+wait(0.03)
+script.Disabled = true
+else
+print(You are alive, script is working)
+end
+end
