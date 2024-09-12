@@ -45,9 +45,9 @@ root.Position = Vector3.new(107.00045, 71.8630066, -247.44809)
 
 local function toggleStairs()
 if root.CanTouch == true then
-   root.CanTouch = false
+   root.Size = Vector3.new(45, 150, 45)
 else
-   root.CanTouch = true
+   root.Size = Vector3.new(10, 150, 10)
 end
 end
 
